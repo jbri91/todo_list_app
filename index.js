@@ -9,8 +9,7 @@ const submit_todo = document.getElementById('submit_todo');
 
 
 submit_todo.addEventListener('click', function() {
-
-
+    console.log('Hello World')
 })
 
 

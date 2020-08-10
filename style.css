@@ -1,5 +1,5 @@
 body {
-    background-color: green;
+    background-color: black;
 }
 
 h1 {
@@ -7,6 +7,7 @@ h1 {
     padding-bottom: 25px;
     font-size: 50px;
     text-decoration: underline;
+    color: white;
 }
 
 .input-list {
@@ -18,10 +19,13 @@ h1 {
 .container {
     text-align: center;
     font-size: 25px;
-    background-color:greenyellow;
+    background-color:red;
     margin: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .options {
-    background-color: 
+    list-style: none;
+    padding-right: 500px;
 }
