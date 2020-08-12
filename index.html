@@ -12,20 +12,22 @@
 
     <div>
       <div class="container">
-        <input
-          id ='textInput'
-          type="text"
-          class="inputTask"
-          placeholder="What do you want to do?"
-        />
-        <br>
-        <button onClick='fn1()' id="submit_todo" type="button">Enter</button>
-        <ul id = 'options' class="options">
-          <li class="item1">Item 1</li>
+        <form>
+          <input
+            id="textInput"
+            type="text"
+            class="inputTask"
+            placeholder="What do you want to do?"
+          />
+        </form>
+        <br />
+        <button id="submit_todo" type="button">Enter</button>
+        <ul id="tasks" class="tasks">
+          <!-- <li class="item1">Item 1</li>
           <li class="item2">Item 2</li>
           <li class="item3">Item 3</li>
           <li class="item4">Item 4</li>
-          <li class="item5">Item 5</li>
+          <li class="item5">Item 5</li> -->
         </ul>
       </div>
     </div>
@@ -34,11 +36,3 @@
   </body>
   <footer></footer>
 </html>
-
-
-let options = document.querySelector('#options');
-let tasks = inputTask;
-let nodes = tasks.map(task => {
-    let li = document.createElement('li');
-    li. 
-})

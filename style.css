@@ -1,31 +1,32 @@
 body {
-    background-color: black;
+  background-color: #add8e6;
 }
 
 h1 {
-    text-align: center;
-    padding-bottom: 25px;
-    font-size: 50px;
-    text-decoration: underline;
-    color: white;
+  text-align: center;
+  padding-bottom: 25px;
+  font-size: 50px;
+  text-decoration: underline;
+  color: blue;
 }
 
 .inputTask {
-    font-size: 30px;
-    font-style: italic;
-    background-color: gray;
+  font-size: 30px;
+  font-style: italic;
+  background-color: #add8e6;
 }
 
 .container {
-    text-align: center;
-    font-size: 25px;
-    background-color:red;
-    margin: 100px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  text-align: center;
+  font-size: 25px;
+  background-color: #0066ff;
+  margin: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bolder;
 }
 
-.options {
-    list-style: none;
-    padding-right: 500px;
+.tasks {
+  list-style: none;
+  padding-right: 500px;
 }

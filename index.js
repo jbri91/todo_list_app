@@ -3,17 +3,15 @@
 // When I click delete, it should delete.
 // localstorage (Last thing)
 
-let itemList = document.querySelector('#options');
+let itemList = document.querySelector(".tasks");
 
-function fn1() {
-    let str = document.getElementById('textInput').value;
-    itemList.firstElementChild.textContent = str;
-}
+const submit_todo = document.getElementById("submit_todo");
 
-
-
-
-
+submit_todo.addEventListener("click", function (e) {
+  let itemList = document.querySelector(".tasks");
+  let str = document.getElementById("textInput").value;
+  tasks.append(str);
+});
 
 
 
@@ -23,6 +21,65 @@ function fn1() {
 
 
 
+
+// Questions
+/*  push does not come out as a function in place of append. 
+Differences between querySelector, getElementById.
+Javascript tutorial similar to HTML/CSS crash course.
+innerHTML and textContent
+what is a form element?
+Adding two events.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let itemInput = document.querySelector('input[type="text"]');
+// let form = document.querySelector('form');
+
+// // itemInput.addEventListener('keydown', runEvent)
+
+// function runEvent(e) {
+//     e.preventDefault();
+//     console.log('EVENT TYPE: ' + e.type);
+
+// }
+
+// form.addEventListener('submit', runEvent);
+
+// submit_todo.addEventListener('click', runEvent);
+
+// let newTask = document.createTextNode(str);
+// options.appendChild(newTask);
+// let tasks = document.querySelector('body .options');
+// let ul = document.querySelector('.options')
+// innerHTML and textContent
 
 // Notes
 
@@ -41,15 +98,12 @@ function fn1() {
 // console.log(itemList.previousElementSibling);
 // itemList.children[1].style.backgroundColor = 'yellow';
 
-
 // Previous button function
 
-// const submit_todo = document.getElementById('submit_todo');
-// submit_todo.addEventListener('click', function() {
-    
-// })
-
-
+// function fn1() {
+//     let str = document.getElementById('textInput').value;
+//     itemList.firstElementChild.textContent = str;
+// }
 
 // Create TODO App
 // Input, add to the list.
@@ -62,5 +116,3 @@ function fn1() {
 // addItem
 // addTodo
 // create todo. you need to get value of input. set an id on it or a child. text node. That would create the element.
-
-
