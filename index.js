@@ -28,7 +28,10 @@ Differences between querySelector, getElementById.
 Javascript tutorial similar to HTML/CSS crash course.
 innerHTML and textContent
 what is a form element?
-Adding two events.*/
+Adding two events.
+Div, Nav
+First day on the job as a developer
+*/
 
 
 
