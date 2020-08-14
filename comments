@@ -10,7 +10,7 @@
 
 
 Things to do
-- Tasks do not extend to the end. They wrap up.
+- Tasks do not extend to the end. They move to the next line when you click enter.
 - I want to border each task individually
 - I will need to focus on localStorage now
 

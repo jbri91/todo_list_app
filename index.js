@@ -6,9 +6,13 @@ submit_todo.addEventListener("click", function (e) {
   let li = document.createElement("li");
   li.innerText = str;
   li.appendChild(deleteButton);
-  document.getElementById("tasks").appendChild(li);
+  localStorage.setItem(str, document.getElementById("tasks").appendChild(li));
+  
 
   deleteButton.addEventListener("click", function (e) {
-    document.getElementById("tasks").removeChild(li);
+    localStorage.removeItem(document.getElementById("tasks").removeChild(li));
+
+  
   });
 });
+
