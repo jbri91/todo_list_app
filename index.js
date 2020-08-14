@@ -1,16 +1,24 @@
 // Things APP Should DO
 // When I click submit, item should be added.
+// Add delete button
 // When I click delete, it should delete.
 // localstorage (Last thing)
 
-let itemList = document.querySelector(".tasks");
-
-const submit_todo = document.getElementById("submit_todo");
-
 submit_todo.addEventListener("click", function (e) {
-  let itemList = document.querySelector(".tasks");
+  let deleteButton = document.createElement("button");
+  deleteButton.innerHTML = "Delete";
+  
+
   let str = document.getElementById("textInput").value;
-  tasks.append(str);
+  let li = document.createElement("li");
+  li.innerText = str;
+  li.appendChild(deleteButton);
+  document.getElementById("tasks").appendChild(li);
+
+  deleteButton.addEventListener("click", function (e) {
+    document.getElementById("tasks").removeChild(li);
+
+  });
 });
 
 
@@ -22,46 +30,58 @@ submit_todo.addEventListener("click", function (e) {
 
 
 
-// Questions
-/*  push does not come out as a function in place of append. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <button id='deleteTask' type='button'>Delete</button> */
+// <button onclick='removeTask()'>Delete</button>
+
+// li.addEventListener('click', removeTask() {
+
+// })
+
+// let li = document.createElement('li');
+
+// li.addEventListener('click', function(removeTask) {
+//   let deleteTask = document.getElementById('li');
+//   deleteTask.remove();
+// })
+
+/* Questions
 Differences between querySelector, getElementById.
-Javascript tutorial similar to HTML/CSS crash course.
 innerHTML and textContent
 what is a form element?
 Adding two events.
 Div, Nav
 First day on the job as a developer
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // let itemInput = document.querySelector('input[type="text"]');
 // let form = document.querySelector('form');
