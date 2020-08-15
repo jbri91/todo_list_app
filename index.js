@@ -2,17 +2,23 @@ submit_todo.addEventListener("click", function (e) {
   let deleteButton = document.createElement("button");
   deleteButton.innerHTML = "Delete";
 
-  let str = document.getElementById("textInput").value;
+  let str = JSON.stringify(document.getElementById("textInput").value);
   let li = document.createElement("li");
+
   li.innerText = str;
   li.appendChild(deleteButton);
-  localStorage.setItem(str, document.getElementById("tasks").appendChild(li));
+  document.getElementById("tasks").appendChild(li);
+  localStorage.setItem(str, 0);
   
 
   deleteButton.addEventListener("click", function (e) {
     localStorage.removeItem(document.getElementById("tasks").removeChild(li));
-
-  
   });
 });
 
+
+/* Questions
+- delete button does not remove from localStorage.
+- I moved 'str' to the value side of localStorage. I put Math.random() on
+the key side.
+*/
