@@ -8,7 +8,7 @@ submit_todo.addEventListener("click", function (e) {
   li.innerText = str;
   li.appendChild(deleteButton);
   document.getElementById("tasks").appendChild(li);
-  localStorage.setItem(str, 0);
+  localStorage.setItem(Math.random(), str);
   
 
   deleteButton.addEventListener("click", function (e) {
