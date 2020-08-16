@@ -19,7 +19,8 @@ submit_todo.addEventListener("click", function (e) {
 
   deleteButton.addEventListener("click", function (e) {
     document.getElementById("tasks").removeChild(li);
-    localStorage.removeItem(taskKey);
+    savedTodos.splice(0,1);
+    localStorage.setItem(taskKey, JSON.stringify(savedTodos));
   });
 });
 
