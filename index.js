@@ -1,12 +1,11 @@
 const taskKey = "Saved Task";
-
+const savedTodos = JSON.parse(localStorage.getItem(taskKey));
 let li = document.createElement("li");
 
 submit_todo.addEventListener("click", function (e) {
   let deleteButton = document.createElement("button");
   deleteButton.innerHTML = "Delete";
 
-  const savedTodos = JSON.parse(localStorage.getItem(taskKey));
   let li = document.createElement("li");
   let str = JSON.stringify([document.getElementById("textInput").value]);
   li.innerText = str;
@@ -23,16 +22,17 @@ submit_todo.addEventListener("click", function (e) {
     localStorage.setItem(taskKey, JSON.stringify(savedTodos));
   });
 });
-
+// debugger;
 if (taskKey != null) {
   let deleteButton = document.createElement("button");
   let displayStorage = (li.innerHTML = localStorage.getItem(taskKey));
   document.getElementById("tasks").appendChild(li);
-  li.appendChild(deleteButton);
   deleteButton.innerHTML = "Delete";
+  li.appendChild(deleteButton);
   deleteButton.addEventListener("click", function (e) {
     document.getElementById("tasks").removeChild(li);
-    // localStorage.removeItem(taskKey);
+    savedTodos.splice(0,1);
+    localStorage.setItem(taskKey, JSON.stringify(savedTodos));
   });
 } else {
   li.removeChild(deleteButton);
