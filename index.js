@@ -1,12 +1,16 @@
 const taskKey = "Saved Task";
 const savedTodos = JSON.parse(localStorage.getItem(taskKey));
 let li = document.createElement("li");
-// let itemIndex = savedTodos.indexOf(textInput);
+let str = JSON.stringify([document.getElementById("textInput").value]);
+let deleteButton = document.createElement("button");
 
 
+// debugger;
 submit_todo.addEventListener("click", function (e) {
   let deleteButton = document.createElement("button");
+  deleteButton.className = 'delete';
   deleteButton.innerHTML = "Delete";
+  
 
   let li = document.createElement("li");
   let str = JSON.stringify([document.getElementById("textInput").value]);
@@ -17,29 +21,26 @@ submit_todo.addEventListener("click", function (e) {
 
   savedTodos.push(document.getElementById("textInput").value);
   localStorage.setItem(taskKey, JSON.stringify(savedTodos));
-  document.getElementById("tasks").appendChild(li);
   
+
   deleteButton.addEventListener("click", function (e) {
     document.getElementById("tasks").removeChild(li);
-    itemIndex = savedTodos.indexOf(str);
-    savedTodos.splice(itemIndex,1);
+    savedTodos.splice(0,1);
      
     localStorage.setItem(taskKey, JSON.stringify(savedTodos));
   });
 });
-// debugger;
-if (taskKey != null) {
-  let deleteButton = document.createElement("button");
-  let displayStorage = (li.innerHTML = localStorage.getItem(taskKey));
-  document.getElementById("tasks").appendChild(li);
+
+if (savedTodos != null) {
+  li.innerText = str;
+  li.innerHTML = localStorage.getItem(taskKey);
+  document.getElementById('tasks').appendChild(li);  //This line puts all tasks on one line.
   deleteButton.innerHTML = "Delete";
   li.appendChild(deleteButton);
+
   deleteButton.addEventListener("click", function (e) {
     document.getElementById("tasks").removeChild(li);
-    savedTodos.splice(itemIndex,1);
+    savedTodos.splice(0,1);
     localStorage.setItem(taskKey, JSON.stringify(savedTodos));
-  });
-} else {
-  li.removeChild(deleteButton);
-}
-
+  }
+)}
