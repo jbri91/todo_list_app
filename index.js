@@ -1,32 +1,3 @@
-const taskKey = "Saved Task";
-const savedTodos = JSON.parse(localStorage.getItem(taskKey));
-let li = document.createElement("li");
-let str = JSON.stringify([document.getElementById("textInput").value]);
-let deleteButton = document.createElement("button");
-
-
-submit_todo.addEventListener("click", function (e) {
-  let deleteButton = document.createElement("button");
-  deleteButton.className = 'delete';
-  deleteButton.innerHTML = "Delete";
-
-  let li = document.createElement("li");
-  let str = JSON.stringify([document.getElementById("textInput").value]);
-  li.innerText = str;
-  li.appendChild(deleteButton);
-  document.getElementById("tasks").appendChild(li);
-  localStorage.setItem(taskKey, JSON.stringify(savedTodos));
-  });
-
-
-  deleteButton.addEventListener("click", function (e) {
-    document.getElementById("tasks").removeChild(li);
-    savedTodos.splice(0,1);
-    localStorage.setItem(taskKey, JSON.stringify(savedTodos));
-  })
-
-
-
 function addTask(e) {
   e.preventDefault();
   const input = document.getElementById("textInput");
@@ -95,6 +66,5 @@ function deleteTask(e) {
     todo.parentElement.removeChild(todo);
   }
 }
-
 
 
