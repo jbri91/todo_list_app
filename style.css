@@ -24,6 +24,8 @@ h1 {
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: bolder;
+  width: auto;
+  height: 100;
 }
 
 .tasks {
@@ -44,4 +46,5 @@ li button {
   font-size: 20px;
   margin-left: 850px;
   border: solid;
+  flex-shrink: 1;
 }
