@@ -1,22 +1,17 @@
-const taskKey = "Saved Task";
-const savedTodos = JSON.parse(localStorage.getItem(taskKey));
-let li = document.createElement("li");
+// const taskKey = "Saved Task";
+// const savedTodos = JSON.parse(localStorage.getItem(taskKey));
+// let li = document.createElement("li");
 
+document.getElementById('textInput').addEventListener('keydown', function (e) {
+  if (e.which == 13) {
+    addTask(e);
+  }
+})
 
-submit_todo.addEventListener("click", addTask() {
-  
-  })
-  
-
-  
-    deleteButton.addEventListener("click", deleteTask(e) {
-
-    }
-
-
+submit_todo.addEventListener("click", addTask);
 
 function addTask(e) {
-  // e.preventDefault();
+  e.preventDefault();
   const input = document.getElementById("textInput");
 
   const task = document.createElement("li");
@@ -24,17 +19,16 @@ function addTask(e) {
   task.id = "todo";
   tasks.appendChild(task);
 
-  const deleteButton = document.createElement("button");
-  deleteButton.innerText = "Delete";
-  deleteButton.classList.add("delete");
-  tasks.appendChild(deleteButton);
 
+  let deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.className = "delete";
+  deleteButton.addEventListener('click', deleteTask);
+  task.appendChild(deleteButton);
 
   saveTasks(input.value);
   input.value = "";
 }
-
-
 
 function saveTasks(todo) {
   let todos;
@@ -62,7 +56,9 @@ function getTasks() {
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.className = "delete";
+    deleteButton.addEventListener('click', deleteTask);
     task.appendChild(deleteButton);
+
 
     tasks.appendChild(task);
   });
@@ -74,7 +70,6 @@ function deleteTask(e) {
     const todoText = e.target.previousSibling.textContent;
     console.log(todoText);
     const index = todos.indexOf(todoText);
-  }
     if (index !== -1) {
       console.log(index);
       todos.splice(index, 1);
@@ -83,12 +78,8 @@ function deleteTask(e) {
     }
 
     const todo = e.target.parentElement;
-    todo.parentElement.removeChild(todo);
+  todo.parentElement.removeChild(todo);
   }
+}
 
-
-
-
-
-
-
+getTasks();
