@@ -1,3 +1,44 @@
+const taskKey = "Saved Task";
+const savedTodos = JSON.parse(localStorage.getItem(taskKey));
+let li = document.createElement("li");
+
+submit_todo.addEventListener("click", function (e) {
+
+  let li = document.createElement("li");
+  let str = JSON.stringify([document.getElementById("textInput").value]);
+  li.innerText = str;
+  li.appendChild(deleteButton);
+  document.getElementById("tasks").appendChild(li);
+  localStorage.setItem(taskKey, str);
+
+  savedTodos.push(document.getElementById("textInput").value);
+  localStorage.setItem(taskKey, JSON.stringify(savedTodos));
+})
+
+let deleteButton = document.createElement("button");
+  deleteButton.innerHTML = "Delete";
+
+  deleteButton.addEventListener("click", function (e) {
+    document.getElementById("tasks").removeChild(li);
+    localStorage.setItem(taskKey, JSON.stringify(savedTodos));
+  })
+
+
+if (taskKey != null) {
+  let deleteButton = document.createElement("button");
+  let displayStorage = (li.innerHTML = localStorage.getItem(taskKey));
+  document.getElementById("tasks").appendChild(li);
+  deleteButton.innerHTML = "Delete";
+  li.appendChild(deleteButton);
+  deleteButton.addEventListener("click", function (e) {
+    document.getElementById("tasks").removeChild(li);
+    savedTodos.splice(0,1);
+    localStorage.setItem(taskKey, JSON.stringify(savedTodos));
+  });
+
+
+
+
 function addTask(e) {
   e.preventDefault();
   const input = document.getElementById("textInput");
@@ -12,9 +53,12 @@ function addTask(e) {
   deleteButton.classList.add("delete");
   tasks.appendChild(deleteButton);
 
+
   saveTasks(input.value);
   input.value = "";
 }
+
+
 
 function saveTasks(todo) {
   let todos;
@@ -54,7 +98,7 @@ function deleteTask(e) {
     const todoText = e.target.previousSibling.textContent;
     console.log(todoText);
     const index = todos.indexOf(todoText);
-
+  }
     if (index !== -1) {
       console.log(index);
       todos.splice(index, 1);
@@ -66,5 +110,3 @@ function deleteTask(e) {
     todo.parentElement.removeChild(todo);
   }
 }
-
-
