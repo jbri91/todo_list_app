@@ -48,3 +48,11 @@ li button {
   border: solid;
   flex-shrink: 1;
 }
+
+#submit_todo {
+  background: black;
+  color: blue;
+  font-size: 25px;
+  border: solid;
+
+}
