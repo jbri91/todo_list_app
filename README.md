@@ -1,9 +1,8 @@
-# Todo List Application
 # Your Trusty To Do List Application
 
 Todo App created with HTML, CSS and JavaScript
 
-@@ -7,7 +7,7 @@ Click [here](https://jbri91.github.io/todo_list_app/) to plan out your day.
+Click [here](https://jbri91.github.io/todo_list_app/) to plan out your day.
 ![TodoApp](https://github.com/jbri91/todo_list_app/blob/master/To%20Do%20App.png?raw=true)
 
 # Summary
