@@ -38,13 +38,15 @@ li {
   margin: 25px;
   padding-right: 450px;
   border-left: solid blue;
+  font-size: 30px;
+  display: flex;
 }
 
 li button {
   color: blue;
   background: black;
   font-size: 20px;
-  margin-left: 850px;
+  margin-left: 60px;
   border: solid;
   flex-shrink: 1;
 }
@@ -54,5 +56,4 @@ li button {
   color: blue;
   font-size: 25px;
   border: solid;
-
 }
